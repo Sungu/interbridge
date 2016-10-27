@@ -1,0 +1,17 @@
+{
+	"name": "InterBridge",
+	"icons": [
+		{
+			"src": "/assets/favicon/android-chrome-192x192-fc5d750e7f0cd1744364207ddf5534bb7d401c350bc0581a36edb1f9c9519276.png",
+			"sizes": "192x192",
+			"type": "image\/png"
+		},
+		{
+			"src": "/assets/favicon/android-chrome-256x256-d0248a2824cb29d3a1602e4c5e746a7225eb4e9e489e3d7c55dccbae58e7d7d2.png",
+			"sizes": "256x256",
+			"type": "image\/png"
+		}
+	],
+	"theme_color": "#ffffff",
+	"display": "standalone"
+}
