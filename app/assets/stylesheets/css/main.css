@@ -140,7 +140,7 @@ a:hover {
   opacity: 0;
 }
 #hero-area {
-  background: url('/assets/bridge.JPG') no-repeat 50%;
+  background: url('https://s3.ap-northeast-2.amazonaws.com/sungurails/interbridge/bridge.JPG') no-repeat 50%;
   background-size: cover;
   background-attachment: fixed;
   padding: 230px 0;
