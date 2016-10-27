@@ -1,0 +1,62 @@
+<!--play bridge-->
+<section id="about">
+  <div class="container" style="font-family: 'Nanum Gothic', serif;">
+    <div class="row">
+      <div class="col-md-6 col-sm-6" style="margin-bottom:50px">
+        <div class="block wow fadeInLeft" data-wow-delay=".3s" data-wow-duration="500ms">
+            <h2>
+            Play Bridge란?
+            </h2>
+            <p>
+                여러분의 재능을 무한히 펼쳐보세요! 이곳에서는 무엇이든 가능합니다.
+            </p>
+            <p>
+                재밌는 배움(프로그래밍, 디자인, 역사, 심리학, 창의성 등), 다양한 관심사(글쓰기, 드로잉, 악기 연주, 사진, 독서 등), 새로운 경험(연극, 공연 관람, 토크 콘서트 등), 폭넓은 연결점(음악 감상, 영화 상영, 인문 워크샵, 상담 활동 등) 위 4가지 키워드를 중심으로 새로운 연결을 만드세요!
+            </p>
+        </div>
+      </div>
+      
+      <div class="col-md-6 col-sm-6" style="margin-bottom:50px">
+        <div class="block wow fadeInRight" data-wow-delay=".3s" data-wow-duration="500ms">
+            <img src="/assets/play.jpg" alt="">
+        </div>
+      </div>
+      
+      <div class="text-center">
+        <a class="btn btn-lg btn-success" style="border-radius:10px" href="/post/new" >프로젝트 등록</a>
+      </div>
+      
+      <div style="margin-top:50px;">
+        <% @post.each do |a| %>
+          <div class="col-lg-6" style="margin-bottom:30px">
+            <!-- Post-->
+            <a href="/post/show/<%=a.id %>" style="text-decoration:none">
+              <div class="post-module">
+                <!-- Post Content-->
+                <div class="post-content">
+                  <h4 class="text-center" style="color:black;margin-bottom:20px;font-weight:600">프로젝트 타이틀</h4>
+                  <h1 class="title text-center" style="margin-bottom:20px"><%= a.title %></h1>
+                  <h4 class="text-center" style="color:black;margin-bottom:20px;font-weight:600">목표</h4>
+                  <h1 class="title text-center" style="color:black"><%= a.purpose %></h1>
+                  <div class ="col-sm-6">
+                    <h4 class="text-center" style="color:black;margin-top:20px;font-weight:600"><%= (a.created_at + (a.dday*86400)).day %> <%= (a.created_at + (a.dday*86400)).strftime("%b") %>마감</h4>
+                  </div>
+                  <div class ="col-sm-6">
+                    <h4 class="text-center" style="color:black;margin-top:20px;margin-bottom:30px;font-weight:600"><%= (a.applicants.count)%>/<%= a.people %></h4>
+                  </div>
+                  <div class="post-meta"><span class="timestamp"><i class="fa fa-clock-o" style="margin-right:15px"></i><%=time_ago_in_words(a.created_at)%> ago</span></div>
+                </div>
+              </div>
+            </a>
+          </div>
+        <% end %>
+        
+        <div class="text-center">
+          <%= will_paginate @post%>
+        </div>
+        
+      </div>
+      
+    </div>
+  </div>
+</section>
